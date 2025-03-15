@@ -13,11 +13,11 @@ describe("age calculator", () => {
     // arrange
     // act
     const result = getAge(2021, 2022);
-  
+
     // assert
     assert.equal(result, 1);
   });
-  
+
   it("I am 27 years old in 2025", () => {
     const result = getAge(1998, 2025);
     assert.equal(result, 27);
@@ -37,11 +37,18 @@ describe("age classifier", () => {
     // arrange
     // act
     const result = getAgeGroup(4);
-  
+
     // assert
     assert.equal(result, "kid");
   });
-  it("13-19 years old should be a teenager");
+  it("13-19 years old should be a teenager", () => {
+    // arrange
+    // act
+    const result = getAgeGroup(13);
+
+    // assert
+    assert.equal(result, "teenager");
+  });
   it("20-39 years old should be a adult");
   it("above 39 years old ... you are just old");
 });
