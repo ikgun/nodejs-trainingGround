@@ -49,6 +49,13 @@ describe("age classifier", () => {
     // assert
     assert.equal(result, "teenager");
   });
-  it("20-39 years old should be a adult");
+  it("20-39 years old should be a adult", () => {
+    // arrange
+    // act
+    const result = getAgeGroup(38);
+  
+    // assert
+    assert.equal(result, "adult");
+  });
   it("above 39 years old ... you are just old");
 });
