@@ -1,5 +1,6 @@
 import assert from "assert";
 import { getAge, getAgeGroup } from "./index.mjs";
+import { it } from "mocha";
 
 describe("age calculator", () => {
   it("someone born 1972 is 50 2022", () => {
@@ -25,6 +26,10 @@ describe("age calculator", () => {
 });
 
 describe("age classifier", () => {
+  it("should not be under zero", () => {
+    const result = getAgeGroup(-1);
+    assert.equal(result, "Age can't be under zero!");
+  });
   it("0-3 years old should be a toddler", () => {
     // arrange
     // act
@@ -53,7 +58,7 @@ describe("age classifier", () => {
     // arrange
     // act
     const result = getAgeGroup(38);
-  
+
     // assert
     assert.equal(result, "adult");
   });
@@ -61,7 +66,7 @@ describe("age classifier", () => {
     // arrange
     // act
     const result = getAgeGroup(40);
-  
+
     // assert
     assert.equal(result, "old");
   });
@@ -69,7 +74,7 @@ describe("age classifier", () => {
     // arrange
     // act
     const result = getAgeGroup(50);
-  
+
     // assert
     assert.equal(result, "prime");
   });
