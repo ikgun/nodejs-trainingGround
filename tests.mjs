@@ -1,5 +1,5 @@
 import assert from "assert";
-import { getAge } from "./index.mjs";
+import { getAge, getAgeGroup } from "./index.mjs";
 
 describe("age calculator", () => {
   it("someone born 1972 is 50 2022", () => {
