@@ -57,5 +57,12 @@ describe("age classifier", () => {
     // assert
     assert.equal(result, "adult");
   });
-  it("above 39 years old ... you are just old");
+  it("above 39 years old ... you are just old", () => {
+    // arrange
+    // act
+    const result = getAgeGroup(40);
+  
+    // assert
+    assert.equal(result, "old");
+  });
 });
